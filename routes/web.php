@@ -11,6 +11,8 @@ use App\Http\Controllers\Backoffice\ProductController;
 use App\Http\Controllers\Backoffice\StockController;
 use App\Http\Controllers\Backoffice\TransactionController;
 use App\Http\Controllers\Backoffice\OrderController;
+use App\Http\Controllers\Backoffice\ReportController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,4 +50,11 @@ Route::group(['prefix' => 'backoffice', 'as' => 'backoffice.', 'middleware' => [
 
     // Order
     Route::resource('/order', OrderController::class)->name('*', 'order');
+
+    // Report
+    Route::controller(ReportController::class)->prefix('/report')->as('report.')->group(function () {
+        Route::get('/index', 'index')->name('index');
+        Route::get('/filter', 'filter')->name('filter');
+        Route::get('/pdf/{fromDate}/{toDate}', 'pdf')->name('pdf');
+    });
 });
