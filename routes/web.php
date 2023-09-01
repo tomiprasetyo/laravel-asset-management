@@ -5,6 +5,7 @@ use App\Http\Controllers\Backoffice\DashboardController;
 use App\Http\Controllers\Backoffice\PermissionController;
 use App\Http\Controllers\Backoffice\RoleController;
 use App\Http\Controllers\Backoffice\UserController;
+use App\Http\Controllers\Backoffice\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,5 @@ Route::group(['prefix' => 'backoffice', 'as' => 'backoffice.', 'middleware' => [
     Route::resource('/permission', PermissionController::class);
     Route::resource('/role', RoleController::class);
     Route::resource('/user', UserController::class);
+    Route::resource('/category', CategoryController::class);
 });
