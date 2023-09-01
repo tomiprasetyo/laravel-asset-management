@@ -1,0 +1,15 @@
+git checkout main
+git pull
+========
+git branch <nama-branch>
+git checkout <nama-branch>
+========
+git add .
+git commit -m "nama commit"
+git push origin <nama-branch>
+========
+git pull request <github.com>
+git merge
+========
+git checkout main
+git pull
