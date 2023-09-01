@@ -9,6 +9,7 @@ use App\Http\Controllers\Backoffice\CategoryController;
 use App\Http\Controllers\Backoffice\SupplierController;
 use App\Http\Controllers\Backoffice\ProductController;
 use App\Http\Controllers\Backoffice\StockController;
+use App\Http\Controllers\Backoffice\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+// Dashboard
 Route::group(['prefix' => 'backoffice', 'as' => 'backoffice.', 'middleware' => ['auth']], function () {
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
     Route::resource('/permission', PermissionController::class);
@@ -39,4 +41,7 @@ Route::group(['prefix' => 'backoffice', 'as' => 'backoffice.', 'middleware' => [
         Route::get('/index', 'index')->name('index');
         Route::put('/update/{id}', 'update')->name('update');
     });
+
+    // Transaction
+    Route::get('/transaction', TransactionController::class)->name('transaction');
 });
