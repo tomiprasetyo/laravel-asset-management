@@ -10,6 +10,7 @@ use App\Http\Controllers\Backoffice\SupplierController;
 use App\Http\Controllers\Backoffice\ProductController;
 use App\Http\Controllers\Backoffice\StockController;
 use App\Http\Controllers\Backoffice\TransactionController;
+use App\Http\Controllers\Backoffice\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,4 +45,7 @@ Route::group(['prefix' => 'backoffice', 'as' => 'backoffice.', 'middleware' => [
 
     // Transaction
     Route::get('/transaction', TransactionController::class)->name('transaction');
+
+    // Order
+    Route::resource('/order', OrderController::class)->name('*', 'order');
 });
