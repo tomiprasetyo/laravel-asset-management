@@ -5,12 +5,12 @@
         @csrf
         <div class="card-body">
             <h3 class="text-center mb-3 font-weight-medium">
-                Login Page
+                Login
             </h3>
             <div class="mb-3">
                 <label class="form-label">Email</label>
                 <input type="email" class="form-control @error('email') is-invalid @enderror"
-                    placeholder="masukan email anda" name="email">
+                    placeholder="masukan email anda" name="email" value="{{ old('email') }}">
                 @error('email')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -20,7 +20,7 @@
             <div class="mb-3">
                 <label class="form-label">Kata Sandi</label>
                 <input type="password" class="form-control @error('password') is-invalid @enderror"
-                    placeholder="masukan kata sandi anda" name="password">
+                    placeholder="masukan kata sandi anda" name="password" value="{{ old('password') }}">
                 @error('password')
                     <div class="invalid-feedback">
                         {{ $message }}

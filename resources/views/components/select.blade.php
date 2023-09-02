@@ -3,6 +3,7 @@
     <select class="form-select @error($name) is-invalid @enderror" name="{{ $name }}">
         {{ $slot }}
     </select>
+
     @error($name)
         <div class="invalid-feedback">
             {{ $message }}
